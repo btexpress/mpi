@@ -1,0 +1,22 @@
+Bringing machine 'pupserv' up with 'virtualbox' provider...
+Bringing machine 'gitserv' up with 'virtualbox' provider...
+==> pupserv: Checking if box 'btexpress/centos7' is up to date...
+==> pupserv: [vagrant-hostsupdater] Checking for host entries
+==> pupserv: [vagrant-hostsupdater] Writing the following entries to (/etc/hosts)
+==> pupserv: [vagrant-hostsupdater]   172.16.32.10  pupserv.example.com  # VAGRANT: 0b683fbf8482eacd42a6474c1a2fcb7e (pupserv) / 51988de1-148a-4844-b12a-f85ce630018e
+==> pupserv: [vagrant-hostsupdater]   172.16.32.10  alias.testing.de  # VAGRANT: 0b683fbf8482eacd42a6474c1a2fcb7e (pupserv) / 51988de1-148a-4844-b12a-f85ce630018e
+==> pupserv: [vagrant-hostsupdater]   172.16.32.10  alias2.somedomain.com  # VAGRANT: 0b683fbf8482eacd42a6474c1a2fcb7e (pupserv) / 51988de1-148a-4844-b12a-f85ce630018e
+==> pupserv: [vagrant-hostsupdater] This operation requires administrative access. You may skip it by manually adding equivalent entries to the hosts file.
+==> pupserv: Updating /etc/hosts file on active guest machines...
+==> pupserv: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> pupserv: flag to force provisioning. Provisioners marked to run always will still run.
+==> gitserv: Checking if box 'btexpress/centos7' is up to date...
+==> gitserv: [vagrant-hostsupdater] Checking for host entries
+==> gitserv: [vagrant-hostsupdater] Writing the following entries to (/etc/hosts)
+==> gitserv: [vagrant-hostsupdater]   172.16.32.11  gitserv.example.com  # VAGRANT: c2f25823b9a42f69fcab2afeaf3550e2 (gitserv) / 54ae81dd-938f-4cd3-8672-2385e2377064
+==> gitserv: [vagrant-hostsupdater]   172.16.32.11  alias.testing.de  # VAGRANT: c2f25823b9a42f69fcab2afeaf3550e2 (gitserv) / 54ae81dd-938f-4cd3-8672-2385e2377064
+==> gitserv: [vagrant-hostsupdater]   172.16.32.11  alias2.somedomain.com  # VAGRANT: c2f25823b9a42f69fcab2afeaf3550e2 (gitserv) / 54ae81dd-938f-4cd3-8672-2385e2377064
+==> gitserv: [vagrant-hostsupdater] This operation requires administrative access. You may skip it by manually adding equivalent entries to the hosts file.
+==> gitserv: Updating /etc/hosts file on active guest machines...
+==> gitserv: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> gitserv: flag to force provisioning. Provisioners marked to run always will still run.
