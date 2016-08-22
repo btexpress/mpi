@@ -9,6 +9,7 @@ gitram = 2048
 $installupdatesandsw = <<INSTALLUPDATESANDSW
     yum update -y
     yum install git -y
+    yum install net-tools -y
 INSTALLUPDATESANDSW
 
 $installpuppet = <<INSTALLPUPPET
