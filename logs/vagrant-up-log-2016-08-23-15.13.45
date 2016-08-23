@@ -1,0 +1,22 @@
+[0mBringing machine 'pupserv' up with 'virtualbox' provider...[0m
+[0mBringing machine 'gitserv' up with 'virtualbox' provider...[0m
+[1m==> pupserv: Checking if box 'btexpress/centos7' is up to date...[0m
+[1m==> pupserv: [vagrant-hostsupdater] Checking for host entries[0m
+[1m==> pupserv: [vagrant-hostsupdater] Writing the following entries to (C:/Windows/system32/drivers/etc/hosts)[0m
+[1m==> pupserv: [vagrant-hostsupdater]   172.16.32.10  pupserv.example.com  # VAGRANT: f862664ed1a5e8a0147f5086d9796c2e (pupserv) / a1a5fef2-198f-47fd-941d-2e37a162c122[0m
+[1m==> pupserv: [vagrant-hostsupdater] This operation requires administrative access. You may skip it by manually adding equivalent entries to the hosts file.[0m
+[1m==> pupserv: Updating /etc/hosts file on active guest machines...[0m
+[1m==> pupserv: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> pupserv: flag to force provisioning. Provisioners marked to run always will still run.[0m
+[1m==> gitserv: Importing base box 'btexpress/centos7'...[0m
+[0m[K[0m[0mProgress: 20%[0m[0m[K[0m[0mProgress: 50%[0m[0m[K[0m[0mProgress: 70%[0m[0m[K[0m[0mProgress: 90%[0m[0m[K[0m[1m==> gitserv: Matching MAC address for NAT networking...[0m
+[1m==> gitserv: Checking if box 'btexpress/centos7' is up to date...[0m
+[1m==> gitserv: Setting the name of the VM: mpi-public_gitserv_1471979705999_95003[0m
+[1m==> gitserv: Fixed port collision for 22 => 2222. Now on port 2200.[0m
+[1m==> gitserv: Clearing any previously set network interfaces...[0m
+[1m==> gitserv: Preparing network interfaces based on configuration...[0m
+[0m    gitserv: Adapter 1: nat[0m
+[0m    gitserv: Adapter 2: hostonly[0m
+[1m==> gitserv: Forwarding ports...[0m
+[0m    gitserv: 22 (guest) => 2200 (host) (adapter 1)[0m
+[1m==> gitserv: Running 'pre-boot' VM customizations...[0m

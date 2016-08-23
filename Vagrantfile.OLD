@@ -3,20 +3,13 @@
 
 domain = 'example.com'
 box = 'btexpress/centos7'
-#psram = 8192
-#gitram = 2048
-psram = 2048
-gitram = 1024
-#pscpu = 4
-#gitcpu = 1
-pscpu = 2
-gitcpu = 1
+psram = 8192
+gitram = 2048
 
 $installupdatesandsw = <<INSTALLUPDATESANDSW
-    yum install deltarpm -y
+    yum update -y
     yum install git -y
     yum install net-tools -y
-    yum update -y
 INSTALLUPDATESANDSW
 
 $installpuppet = <<INSTALLPUPPET
@@ -28,23 +21,9 @@ $installpuppetserver = <<INSTALLPUPPETSERVER
     yum install puppetserver -y
 INSTALLPUPPETSERVER
 
-servers = [
-	{
-	:hostname => 'pupserv',
-	:ip => '172.16.32.10',
-	:box => box,
-	:ram => psram,
-	:cpu => pscpu,
-	:fwdhost => 8140,
-	:fwdguest => 8140,
-	},
-	{
-	:hostname => 'gitserv',
-	:ip => '172.16.32.11',
-	:box => box,
-	:ram => gitram,
-	:cpu => gitcpu,
-	},
+puppet_nodes = [
+  {:hostname => 'pupserv',  :ip => '172.16.32.10', :box => box, :fwdhost => 8140, :fwdguest => 8140, :ram => psram},
+  {:hostname => 'gitserv',  :ip => '172.16.32.11', :box => box, :ram => gitram},
 ]
 
 Vagrant.configure("2") do |config|
@@ -53,24 +32,24 @@ Vagrant.configure("2") do |config|
   config.hostmanager.manage_guest = true
   config.hostmanager.ignore_private_ip = false
 #  config.hostmanager.include_offline = true
-  servers.each do |machine|
+  puppet_nodes.each do |node|
 
-    config.vm.define machine[:hostname] do |node|
-      node.vm.box = machine[:box]
-      node.vm.box_url = 'https://atlas.hashicorp.com/' + node.vm.box
-      node.vm.hostname = machine[:hostname] + '.' + domain
-      node.vm.network :private_network, ip: machine[:ip]
+    config.vm.define node[:hostname] do |node_config|
+      node_config.vm.box = node[:box]
+      node_config.vm.box_url = 'https://atlas.hashicorp.com/' + node_config.vm.box
+      node_config.vm.hostname = node[:hostname] + '.' + domain
+      node_config.vm.network :private_network, ip: node[:ip]
 
-      if machine[:fwdhost]
-        node.vm.network :forwarded_port, guest: machine[:fwdguest], host: machine[:fwdhost]
+      if node[:fwdhost]
+        node_config.vm.network :forwarded_port, guest: node[:fwdguest], host: node[:fwdhost]
       end
 
-      node.vm.provider :virtualbox do |vb|
+      memory = node[:ram] ? node[:ram] : 256;
+      node_config.vm.provider :virtualbox do |vb|
         vb.customize [
           'modifyvm', :id,
-          '--name', machine[:hostname],
-          '--memory', machine[:ram],
-          '--cpus', machine[:cpu],
+          '--name', node[:hostname],
+          '--memory', memory.to_s
         ]
       end
       config.vm.provision "shell", inline:  $installupdatesandsw
@@ -79,6 +58,6 @@ Vagrant.configure("2") do |config|
     config.vm.define "pupserv" do |pupserv|
         pupserv.vm.provision "shell", inline:  $installpuppet
     	pupserv.vm.provision "shell", inline:  $installpuppetserver
-    end
+	end
   end
 end
