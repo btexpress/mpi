@@ -5,10 +5,10 @@ domain = 'example.com'
 box = 'btexpress/centos7'
 #psram = 8192
 #gitram = 2048
-psram = 2048
-gitram = 1024
 #pscpu = 4
 #gitcpu = 1
+psram = 2048
+gitram = 1024
 pscpu = 2
 gitcpu = 1
 
