@@ -13,8 +13,10 @@ pscpu = 2
 gitcpu = 1
 
 $installupdatesandsw = <<INSTALLUPDATESANDSW
+    yum install deltarpm -y
+    yum install git -y
+    yum install net-tools -y
     yum update -y
-    yum install lsof deltarpm git net-tools vim-enhanced tree -y
 INSTALLUPDATESANDSW
 
 $installpuppet = <<INSTALLPUPPET
