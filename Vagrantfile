@@ -14,7 +14,7 @@ gitcpu = 1
 
 $installupdatesandsw = <<INSTALLUPDATESANDSW
     yum update -y
-    yum install lsof deltarpm git net-tools vim-enhanced tree -y
+    yum install mlocate lsof deltarpm git net-tools vim-enhanced tree -y
 INSTALLUPDATESANDSW
 
 $installpuppet = <<INSTALLPUPPET

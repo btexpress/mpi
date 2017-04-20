@@ -1,0 +1,35 @@
+Bringing machine 'master' up with 'virtualbox' provider...
+Bringing machine 'gitserv' up with 'virtualbox' provider...
+==> master: Importing base box 'btexpress/centos7'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> master: Matching MAC address for NAT networking...
+==> master: Checking if box 'btexpress/centos7' is up to date...
+==> master: Setting the name of the VM: mpi-public_master_1485905066570_21754
+==> master: Clearing any previously set network interfaces...
+==> master: Preparing network interfaces based on configuration...
+    master: Adapter 1: nat
+    master: Adapter 2: hostonly
+==> master: Forwarding ports...
+    master: 8140 (guest) => 8140 (host) (adapter 1)
+    master: 22 (guest) => 2222 (host) (adapter 1)
+==> master: Running 'pre-boot' VM customizations...
+A customization command failed:
+
+["modifyvm", :id, "--name", "master", "--memory", 3072, "--cpus", 2]
+
+The following error was experienced:
+
+#<Vagrant::Errors::VBoxManageError: There was an error while executing `VBoxManage`, a CLI used by Vagrant
+for controlling VirtualBox. The command and stderr is shown below.
+
+Command: ["modifyvm", "f9023c2b-ad11-48bc-ae48-70bc6f3b5a74", "--name", "master", "--memory", "3072", "--cpus", "2"]
+
+Stderr: VBoxManage: error: Could not rename the directory '/home/wtooles/VirtualBox VMs/mpi-public_master_1485905066570_21754' to '/home/wtooles/VirtualBox VMs/master' to save the settings file (VERR_ALREADY_EXISTS)
+VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), component SessionMachine, interface IMachine, callee nsISupports
+VBoxManage: error: Context: "SaveSettings()" at line 3052 of file VBoxManageModifyVM.cpp
+>
+
+Please fix this customization and try again.
+
+real	0m15.358s
+user	0m3.156s
+sys	0m0.912s
