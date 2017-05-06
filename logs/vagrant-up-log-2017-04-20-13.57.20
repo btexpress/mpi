@@ -1,0 +1,232 @@
+Bringing machine 'master' up with 'virtualbox' provider...
+Bringing machine 'gitserv' up with 'virtualbox' provider...
+==> master: Importing base box 'btexpress/centos7'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> master: Matching MAC address for NAT networking...
+==> master: Checking if box 'btexpress/centos7' is up to date...
+==> master: Setting the name of the VM: mpi-public_master_1492711050880_63066
+==> master: Clearing any previously set network interfaces...
+==> master: Preparing network interfaces based on configuration...
+    master: Adapter 1: nat
+    master: Adapter 2: hostonly
+==> master: Forwarding ports...
+    master: 8140 (guest) => 8140 (host) (adapter 1)
+    master: 22 (guest) => 2222 (host) (adapter 1)
+==> master: Running 'pre-boot' VM customizations...
+==> master: Booting VM...
+==> master: Waiting for machine to boot. This may take a few minutes...
+    master: SSH address: 127.0.0.1:2222
+    master: SSH username: vagrant
+    master: SSH auth method: private key
+    master: Warning: Remote connection disconnect. Retrying...
+    master: Warning: Remote connection disconnect. Retrying...
+    master: Warning: Remote connection disconnect. Retrying...
+    master: 
+    master: Vagrant insecure key detected. Vagrant will automatically replace
+    master: this with a newly generated keypair for better security.
+    master: 
+    master: Inserting generated public key within guest...
+    master: Removing insecure key from the guest if it's present...
+    master: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> master: Machine booted and ready!
+[master] GuestAdditions versions on your host (5.1.20) and guest (5.0.20) do not match.
+Loaded plugins: fastestmirror
+Repodata is over 2 weeks old. Install yum-cron? Or run: yum makecache fast
+Determining fastest mirrors
+ * base: mirror.teklinks.com
+ * extras: mirror.steadfast.net
+ * updates: repos.mia.quadranet.com
+Package bzip2-1.0.6-13.el7.x86_64 already installed and latest version
+Resolving Dependencies
+--> Running transaction check
+---> Package binutils.x86_64 0:2.23.52.0.1-55.el7 will be updated
+---> Package binutils.x86_64 0:2.25.1-22.base.el7 will be an update
+---> Package gcc.x86_64 0:4.8.5-11.el7 will be installed
+--> Processing Dependency: libgomp = 4.8.5-11.el7 for package: gcc-4.8.5-11.el7.x86_64
+--> Processing Dependency: cpp = 4.8.5-11.el7 for package: gcc-4.8.5-11.el7.x86_64
+--> Processing Dependency: libgcc >= 4.8.5-11.el7 for package: gcc-4.8.5-11.el7.x86_64
+--> Processing Dependency: glibc-devel >= 2.2.90-12 for package: gcc-4.8.5-11.el7.x86_64
+---> Package make.x86_64 1:3.82-23.el7 will be installed
+---> Package perl.x86_64 4:5.16.3-286.el7 will be updated
+---> Package perl.x86_64 4:5.16.3-291.el7 will be an update
+--> Processing Dependency: perl-libs = 4:5.16.3-291.el7 for package: 4:perl-5.16.3-291.el7.x86_64
+--> Running transaction check
+---> Package cpp.x86_64 0:4.8.5-4.el7 will be updated
+---> Package cpp.x86_64 0:4.8.5-11.el7 will be an update
+---> Package glibc-devel.x86_64 0:2.17-157.el7_3.1 will be installed
+--> Processing Dependency: glibc-headers = 2.17-157.el7_3.1 for package: glibc-devel-2.17-157.el7_3.1.x86_64
+--> Processing Dependency: glibc = 2.17-157.el7_3.1 for package: glibc-devel-2.17-157.el7_3.1.x86_64
+--> Processing Dependency: glibc-headers for package: glibc-devel-2.17-157.el7_3.1.x86_64
+---> Package libgcc.x86_64 0:4.8.5-4.el7 will be updated
+---> Package libgcc.x86_64 0:4.8.5-11.el7 will be an update
+---> Package libgomp.x86_64 0:4.8.5-4.el7 will be updated
+---> Package libgomp.x86_64 0:4.8.5-11.el7 will be an update
+---> Package perl-libs.x86_64 4:5.16.3-286.el7 will be updated
+---> Package perl-libs.x86_64 4:5.16.3-291.el7 will be an update
+--> Running transaction check
+---> Package glibc.x86_64 0:2.17-106.el7_2.6 will be updated
+--> Processing Dependency: glibc = 2.17-106.el7_2.6 for package: glibc-common-2.17-106.el7_2.6.x86_64
+---> Package glibc.x86_64 0:2.17-157.el7_3.1 will be an update
+---> Package glibc-headers.x86_64 0:2.17-157.el7_3.1 will be installed
+--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.17-157.el7_3.1.x86_64
+--> Processing Dependency: kernel-headers for package: glibc-headers-2.17-157.el7_3.1.x86_64
+--> Running transaction check
+---> Package glibc-common.x86_64 0:2.17-106.el7_2.6 will be updated
+---> Package glibc-common.x86_64 0:2.17-157.el7_3.1 will be an update
+---> Package kernel-headers.x86_64 0:3.10.0-514.16.1.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package             Arch        Version                     Repository    Size
+================================================================================
+Installing:
+ gcc                 x86_64      4.8.5-11.el7                base          16 M
+ make                x86_64      1:3.82-23.el7               base         420 k
+Updating:
+ binutils            x86_64      2.25.1-22.base.el7          base         5.4 M
+ perl                x86_64      4:5.16.3-291.el7            base         8.0 M
+Installing for dependencies:
+ glibc-devel         x86_64      2.17-157.el7_3.1            updates      1.1 M
+ glibc-headers       x86_64      2.17-157.el7_3.1            updates      668 k
+ kernel-headers      x86_64      3.10.0-514.16.1.el7         updates      4.8 M
+Updating for dependencies:
+ cpp                 x86_64      4.8.5-11.el7                base         5.9 M
+ glibc               x86_64      2.17-157.el7_3.1            updates      3.6 M
+ glibc-common        x86_64      2.17-157.el7_3.1            updates       11 M
+ libgcc              x86_64      4.8.5-11.el7                base          97 k
+ libgomp             x86_64      4.8.5-11.el7                base         152 k
+ perl-libs           x86_64      4:5.16.3-291.el7            base         688 k
+
+Transaction Summary
+================================================================================
+Install  2 Packages (+3 Dependent packages)
+Upgrade  2 Packages (+6 Dependent packages)
+
+Total download size: 58 M
+Downloading packages:
+Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+--------------------------------------------------------------------------------
+Total                                               13 MB/s |  58 MB  00:04     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : libgcc-4.8.5-11.el7.x86_64                                  1/21 
+  Updating   : glibc-common-2.17-157.el7_3.1.x86_64                        2/21 
+  Updating   : glibc-2.17-157.el7_3.1.x86_64                               3/21 
+warning: /etc/nsswitch.conf created as /etc/nsswitch.conf.rpmnew
+  Updating   : binutils-2.25.1-22.base.el7.x86_64                          4/21 
+  Updating   : 4:perl-libs-5.16.3-291.el7.x86_64                           5/21 
+  Updating   : 4:perl-5.16.3-291.el7.x86_64                                6/21 
+  Updating   : cpp-4.8.5-11.el7.x86_64                                     7/21 
+  Updating   : libgomp-4.8.5-11.el7.x86_64                                 8/21 
+  Installing : kernel-headers-3.10.0-514.16.1.el7.x86_64                   9/21 
+  Installing : glibc-headers-2.17-157.el7_3.1.x86_64                      10/21 
+  Installing : glibc-devel-2.17-157.el7_3.1.x86_64                        11/21 
+  Installing : gcc-4.8.5-11.el7.x86_64                                    12/21 
+  Installing : 1:make-3.82-23.el7.x86_64                                  13/21 
+  Cleanup    : 4:perl-5.16.3-286.el7.x86_64                               14/21 
+  Cleanup    : 4:perl-libs-5.16.3-286.el7.x86_64                          15/21 
+  Cleanup    : libgomp-4.8.5-4.el7.x86_64                                 16/21 
+  Cleanup    : cpp-4.8.5-4.el7.x86_64                                     17/21 
+  Cleanup    : binutils-2.23.52.0.1-55.el7.x86_64                         18/21 
+  Cleanup    : glibc-common-2.17-106.el7_2.6.x86_64                       19/21 
+  Cleanup    : glibc-2.17-106.el7_2.6.x86_64                              20/21 
+  Cleanup    : libgcc-4.8.5-4.el7.x86_64                                  21/21 
+  Verifying  : glibc-2.17-157.el7_3.1.x86_64                               1/21 
+  Verifying  : glibc-headers-2.17-157.el7_3.1.x86_64                       2/21 
+  Verifying  : kernel-headers-3.10.0-514.16.1.el7.x86_64                   3/21 
+  Verifying  : glibc-common-2.17-157.el7_3.1.x86_64                        4/21 
+  Verifying  : libgcc-4.8.5-11.el7.x86_64                                  5/21 
+  Verifying  : binutils-2.25.1-22.base.el7.x86_64                          6/21 
+  Verifying  : 4:perl-libs-5.16.3-291.el7.x86_64                           7/21 
+  Verifying  : 1:make-3.82-23.el7.x86_64                                   8/21 
+  Verifying  : cpp-4.8.5-11.el7.x86_64                                     9/21 
+  Verifying  : libgomp-4.8.5-11.el7.x86_64                                10/21 
+  Verifying  : gcc-4.8.5-11.el7.x86_64                                    11/21 
+  Verifying  : 4:perl-5.16.3-291.el7.x86_64                               12/21 
+  Verifying  : glibc-devel-2.17-157.el7_3.1.x86_64                        13/21 
+  Verifying  : libgomp-4.8.5-4.el7.x86_64                                 14/21 
+  Verifying  : cpp-4.8.5-4.el7.x86_64                                     15/21 
+  Verifying  : glibc-2.17-106.el7_2.6.x86_64                              16/21 
+  Verifying  : 4:perl-5.16.3-286.el7.x86_64                               17/21 
+  Verifying  : libgcc-4.8.5-4.el7.x86_64                                  18/21 
+  Verifying  : binutils-2.23.52.0.1-55.el7.x86_64                         19/21 
+  Verifying  : 4:perl-libs-5.16.3-286.el7.x86_64                          20/21 
+  Verifying  : glibc-common-2.17-106.el7_2.6.x86_64                       21/21 
+
+Installed:
+  gcc.x86_64 0:4.8.5-11.el7              make.x86_64 1:3.82-23.el7             
+
+Dependency Installed:
+  glibc-devel.x86_64 0:2.17-157.el7_3.1                                         
+  glibc-headers.x86_64 0:2.17-157.el7_3.1                                       
+  kernel-headers.x86_64 0:3.10.0-514.16.1.el7                                   
+
+Updated:
+  binutils.x86_64 0:2.25.1-22.base.el7       perl.x86_64 4:5.16.3-291.el7      
+
+Dependency Updated:
+  cpp.x86_64 0:4.8.5-11.el7                 glibc.x86_64 0:2.17-157.el7_3.1     
+  glibc-common.x86_64 0:2.17-157.el7_3.1    libgcc.x86_64 0:4.8.5-11.el7        
+  libgomp.x86_64 0:4.8.5-11.el7             perl-libs.x86_64 4:5.16.3-291.el7   
+
+Complete!
+Copy iso file /usr/share/virtualbox/VBoxGuestAdditions.iso into the box /tmp/VBoxGuestAdditions.iso
+mount: /dev/loop0 is write-protected, mounting read-only
+Installing Virtualbox Guest Additions 5.1.20 - guest version is 5.0.20
+Verifying archive integrity... All good.
+Uncompressing VirtualBox 5.1.20 Guest Additions for Linux...........
+VirtualBox Guest Additions installer
+Removing installed version 5.0.20 of VirtualBox Guest Additions...
+Removing existing VirtualBox non-DKMS kernel modules[  OK  ]
+Copying additional installer modules ...
+Installing additional modules ...
+vboxadd.sh: Starting the VirtualBox Guest Additions.
+An error occurred during installation of VirtualBox Guest Additions 5.1.20. Some functionality may not work as intended.
+In most cases it is OK that the "Window System drivers" installation failed.
+
+
+Got different reports about installed GuestAdditions version:
+Virtualbox on your host claims:   5.0.20
+VBoxService inside the vm claims: 5.1.20
+Going on, assuming VBoxService is correct...
+Got different reports about installed GuestAdditions version:
+Virtualbox on your host claims:   5.0.20
+VBoxService inside the vm claims: 5.1.20
+Going on, assuming VBoxService is correct...
+==> master: Checking for guest additions in VM...
+    master: The guest additions on this VM do not match the installed version of
+    master: VirtualBox! In most cases this is fine, but in rare cases it can
+    master: prevent things such as shared folders from working properly. If you see
+    master: shared folder errors, please make sure the guest additions within the
+    master: virtual machine match the version of VirtualBox you have installed on
+    master: your host and reload your VM.
+    master: 
+    master: Guest Additions Version: 5.0.20
+    master: VirtualBox Version: 5.1
+==> master: Setting hostname...
+==> master: Configuring and enabling network interfaces...
+==> master: Mounting shared folders...
+    master: /vagrant => /home/wtooles/git-repos/mpi-public
+Vagrant was unable to mount VirtualBox shared folders. This is usually
+because the filesystem "vboxsf" is not available. This filesystem is
+made available via the VirtualBox Guest Additions and kernel module.
+Please verify that these guest additions are properly installed in the
+guest. This is not a bug in Vagrant and is usually caused by a faulty
+Vagrant box. For context, the command attempted was:
+
+mount -t vboxsf -o uid=1000,gid=1000 vagrant /vagrant
+
+The error output from the command was:
+
+mount: wrong fs type, bad option, bad superblock on vagrant,
+       missing codepage or helper program, or other error
+
+       In some cases useful info is found in syslog - try
+       dmesg | tail or so.
+
+real	2m6.421s
+user	0m15.140s
+sys	0m8.224s
