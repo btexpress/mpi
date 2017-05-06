@@ -3,14 +3,18 @@
 
 domain = 'puppetspecialist.nl'
 box = 'btexpress/centos7'
-#psram = 8192
-#gitram = 2048
-#pscpu = 4
-#gitcpu = 1
-psram = 3072
-gitram = 1024
-pscpu = 2
+psram = 8192
+gitram = 2048
+pcram = 2048
+pscpu = 4
 gitcpu = 1
+pccpu = 1
+#psram = 3072
+#gitram = 1024
+#pcram = 1024
+#pscpu = 2
+#gitcpu = 1
+#pccpu = 1
 
 $installupdatesandsw = <<INSTALLUPDATESANDSW
     yum update -y
@@ -43,6 +47,20 @@ servers = [
 	:ram => gitram,
 	:cpu => gitcpu,
 	},
+	{
+	:hostname => 'puppetclient1',
+	:ip => '10.20.0.11',
+	:box => box,
+	:ram => pcram,
+	:cpu => pccpu,
+	},
+	{
+	:hostname => 'puppetclient2',
+	:ip => '10.20.0.12',
+	:box => box,
+	:ram => pcram,
+	:cpu => pccpu,
+	},
 ]
 
 Vagrant.configure("2") do |config|
@@ -58,6 +76,7 @@ Vagrant.configure("2") do |config|
       node.vm.box_url = 'https://atlas.hashicorp.com/' + node.vm.box
       node.vm.hostname = machine[:hostname] + '.' + domain
       node.vm.network :private_network, ip: machine[:ip]
+      node.hostmanager.aliases = machine[:hostname]
 
       if machine[:fwdhost]
         node.vm.network :forwarded_port, guest: machine[:fwdguest], host: machine[:fwdhost]
@@ -77,6 +96,12 @@ Vagrant.configure("2") do |config|
     config.vm.define "master" do |master|
         master.vm.provision "shell", inline:  $installpuppet
     	master.vm.provision "shell", inline:  $installpuppetserver
+    end
+    config.vm.define "puppetclient1" do |puppetclient1|
+        puppetclient1.vm.provision "shell", inline:  $installpuppet
+    end
+    config.vm.define "puppetclient2" do |puppetclient2|
+        puppetclient2.vm.provision "shell", inline:  $installpuppet
     end
   end
 end
