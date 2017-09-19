@@ -1,0 +1,16 @@
+[0mBringing machine 'master' up with 'virtualbox' provider...[0m
+[0mBringing machine 'gitserv' up with 'virtualbox' provider...[0m
+[0;31mThere are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+vm:
+* The 'reload' provisioner could not be found.
+
+Vagrant:
+* Unknown configuration section 'hostmanager'.
+
+[0m
+
+real	0m11.057s
+user	0m0.000s
+sys	0m0.046s
