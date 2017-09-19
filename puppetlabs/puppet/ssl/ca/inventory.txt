@@ -1,0 +1,4 @@
+0x0001 2017-05-05T04:57:10UTC 2022-05-05T04:57:10UTC /CN=Puppet CA: master.puppetspecialist.nl
+0x0002 2017-05-05T05:14:21UTC 2022-05-05T05:14:21UTC /CN=master.puppetspecialist.nl
+0x0003 2017-05-05T05:29:58UTC 2022-05-05T05:29:58UTC /CN=puppetclient1.puppetspecialist.nl
+0x0004 2017-05-05T05:30:40UTC 2022-05-05T05:30:40UTC /CN=puppetclient2.puppetspecialist.nl
